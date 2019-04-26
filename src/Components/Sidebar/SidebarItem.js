@@ -21,7 +21,7 @@ const SidebarItem = ({children, name, isCategory, locked, selectLesson}) => {
         handleClick={handleClick}
       >
         {isCategory ?
-          <ExpandIcon open={open}/>
+          <ExpandIcon/>
           : locked && <LockedLabel/>
         }
       </SidebarButton>
