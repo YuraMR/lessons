@@ -5,7 +5,7 @@ import Sidebar from "./Components/Sidebar";
 import withStyles from "@material-ui/core/es/styles/withStyles";
 import styles from "./styles";
 
-const App = ({classes, lessons}) => {
+const App = ({ classes, lessons }) => {
   const [selectedLesson, selectLesson] = useState('elopage');
 
   return (

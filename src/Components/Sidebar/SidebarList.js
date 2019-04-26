@@ -3,19 +3,33 @@ import Collapse from "@material-ui/core/es/Collapse/Collapse";
 import List from "@material-ui/core/es/List/List";
 
 import SidebarItem from "./SidebarItem";
+import SidebarButtonChild from "./SidebarButtonChild";
 
-const SidebarList = ({items, selectLesson}) => (
-  <List component="div" disablePadding>
-    {items.map(({children, isCategory, id, locked, name}) => (
+const SidebarList = ({ items, selectLesson }) => (
+  <List
+    component="div"
+    disablePadding
+  >
+    {items.map(({ children, isCategory, id, locked, name }) => (
       <SidebarItem
-        key={id}
-        locked={locked}
-        name={name}
         isCategory={isCategory}
+        key={id}
+        name={name}
         selectLesson={selectLesson}
+        sidebarButtonChild={open => (
+          <SidebarButtonChild
+            isCategory={isCategory}
+            open={open}
+            locked={locked}
+          />
+        )}
       >
         {open => isCategory && (
-          <Collapse in={open} timeout="auto" unmountOnExit>
+          <Collapse
+            in={open}
+            timeout="auto"
+            unmountOnExit
+          >
             <SidebarList
               items={children}
               selectLesson={selectLesson}
