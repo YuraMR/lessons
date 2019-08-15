@@ -9,7 +9,7 @@ const ExpandIcon = ({ open }) => open ?
 const LockedLabel = () =>
   <Typography color="error">Locked</Typography>;
 
-const SidebarButtonChild = ({open, isCategory, locked}) => isCategory ?
+const SidebarButtonChild = ({ open, isCategory, locked }) => isCategory ?
   <ExpandIcon open={open}/> : locked ?
     <LockedLabel/> : null;
 

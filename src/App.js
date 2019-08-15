@@ -11,14 +11,10 @@ const App = ({ classes, lessons }) => {
   return (
     <div className="App">
       <Sidebar
-        classes={classes}
         items={lessons}
-        selectLesson={selectLesson}
+        {...{ classes, selectLesson }}
       />
-      <Content
-        classes={classes}
-        selectedLesson={selectedLesson}
-      />
+      <Content {...{ classes, selectedLesson }} />
     </div>
   )
 };

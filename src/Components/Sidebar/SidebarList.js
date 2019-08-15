@@ -12,10 +12,7 @@ const SidebarList = ({ items, selectLesson }) => (
   >
     {items.map(({ children, isCategory, id, locked, name }) => (
       <SidebarItem
-        isCategory={isCategory}
         key={id}
-        name={name}
-        selectLesson={selectLesson}
         sidebarButtonChild={open => (
           <SidebarButtonChild
             isCategory={isCategory}
@@ -23,6 +20,7 @@ const SidebarList = ({ items, selectLesson }) => (
             locked={locked}
           />
         )}
+        {...{ isCategory, name, selectLesson}}
       >
         {open => isCategory && (
           <Collapse

@@ -5,13 +5,12 @@ import SidebarButton from './SidebarButton';
 const SidebarItem = ({ children, name, isCategory, sidebarButtonChild, selectLesson }) => {
   const [open, toggleOpen] = useState(false);
 
-  const handleClick = isCategory ? () => toggleOpen(!open) : () => selectLesson(name);
+  const handleClick = () => isCategory ? toggleOpen(!open) : selectLesson(name);
 
   return (
     <Fragment>
       <SidebarButton
-        handleClick={handleClick}
-        name={name}
+        {...{ handleClick, name }}
       >
         {sidebarButtonChild(open)}
       </SidebarButton>
