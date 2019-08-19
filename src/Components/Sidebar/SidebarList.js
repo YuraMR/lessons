@@ -14,11 +14,7 @@ const SidebarList = ({ items, selectLesson }) => (
       <SidebarItem
         key={id}
         sidebarButtonChild={open => (
-          <SidebarButtonChild
-            isCategory={isCategory}
-            open={open}
-            locked={locked}
-          />
+          <SidebarButtonChild {...{ isCategory, open, locked }} />
         )}
         {...{ isCategory, name, selectLesson}}
       >
